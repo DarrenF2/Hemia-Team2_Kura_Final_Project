@@ -24,24 +24,16 @@ orbs:
 
 jobs:
 
-  aws-cli-example:
-    executor: aws-cli/default
-    steps:
-      - checkout
-      - aws-cli/setup:
-          profile-name: example
-      - run: echo "Run your code here"
-
   build:
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
 
     steps:
       - checkout
-      - aws-cli/setup:
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          aws-region: AWS_REGION
+      # - aws-cli/setup:
+      #     aws-access-key-id: AWS_ACCESS_KEY_ID
+      #     aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+      #     aws-region: AWS_REGION
 
       - aws-ecr/build-and-push-image:
           account-url: AWS_ECR_ACCOUNT_URL   
