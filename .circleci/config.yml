@@ -23,14 +23,21 @@ orbs:
   aws-ecs: circleci/aws-ecs@2.2.1
 
 jobs:
+
+  aws-cli-example:
+    executor: aws-cli/default
+    steps:
+      - checkout
+      - aws-cli/setup:
+          profile-name: example
+      - run: echo "Run your code here"
+
   build:
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
 
     steps:
       - checkout
-      - run: yum update
-      - run: yum upgrade
       - aws-cli/setup:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
