@@ -33,8 +33,9 @@ data "aws_ecs_task_definition" "hemia_task" {
 
 
 resource "aws_ecs_task_definition" "hemia_task" {
-  family = "hemia_taskdef"
+  family                = "hemia_task"
   container_definitions = "${file("task-definitions/service.json")}"
+}
 
 
 
