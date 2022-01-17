@@ -40,31 +40,14 @@ resource "aws_ecs_task_definition" "hemia_task" {
 
 # AWS Security Group
 
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.main.id
-
-  ingress {
-    description      = "TLS from VPC"
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
-    cidr_blocks      = [aws_vpc.main.cidr_block]
-    ipv4_cidr_blocks = [aws_vpc.main.ipv4_cidr_block]
-  }
-
-  egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv4_cidr_blocks = ["::/0"]
-  }
-
-  tags = {
-    Name = "allow_tls"
-  }
+resource "aws_security_group_rule" "hemia_security" {
+  type              = "ingress"
+  from_port         = 80
+  to_port           = 8081
+  protocol          = "tcp"
+  cidr_blocks       = [aws_vpc.example.cidr_block]
+  ipv4_cidr_blocks  = [aws_vpc.example.ipv4_cidr_block]
+  security_group_id = "sg-123-hemia"
 }
 
 
