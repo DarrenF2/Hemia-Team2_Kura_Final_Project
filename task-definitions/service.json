@@ -1,0 +1,15 @@
+[
+  {
+    "name": "hemia-image",
+    "image": "175806093776.dkr.ecr.us-east-1.amazonaws.com/hemia_ecr_repo",
+    "cpu": 10,
+    "memory": 512,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 8081,
+        "hostPort": 8081
+      }
+    ]
+  }
+]
