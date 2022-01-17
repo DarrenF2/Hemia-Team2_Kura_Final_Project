@@ -44,7 +44,7 @@ module "web_server_sg" {
 
   name        = "hemia-web-server"
   description = "Security group for web-server with HTTP ports open within VPC"
-  vpc_id      = "vpc-12345678"
+  vpc_id      = "vpc-5f562d22"
 
   ingress_cidr_blocks = ["10.10.0.0/16"]
 }
