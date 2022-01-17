@@ -13,14 +13,57 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# Creare ECR Repo
+# Create ECR Repo
 # resource "aws_ecr_repository" "create_hemia_ecr_repo" {
 #   name = "hemia_ecr_repo"
 # }
   
-# Create ECS Cluster
-resource "aws_ecs_cluster" "create_hemia_cluster" {
-  name = "hemia-cluster"
+# # Create ECS Cluster
+# resource "aws_ecs_cluster" "create_hemia_cluster" {
+#   name = "hemia-cluster"
+# }
+
+# AWS Task Definition
+
+resource "aws_ecs_task_definition" "make_hemia_task" {
+  container_definitions = <<DEFINITION
+  [
+    {
+      "name": "hemia-task"
+      "image": "${aws_ecr_repository.create_hemia_ecr_repo.repository_url}",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8081,
+          "hostPort": 8081
+        }
+       ],
+      "memory": 512,
+      "cpu": 256
+    }
+  ]
+  
+  DEFINITION
+  requires_compatibilities = ["FARGATE"]
+  network_mode             = "awsvpc"
+  memory                   = 2048
+  cpu                      = 1024
+  execution_role_arn       = "${aws_iam_role.ecsTaskExecutionRole.arn}"
 }
+
+resource "aws_iam_role" "ecsTaskExecutionRole" {
+  name               = "ecsTaskExecutionRole"
+  assume_role_policy = "${data.aws_iam_policy_document.assume_role_policy.json}"
+}
+
+data "aws_iam_policy_document" "assume_role_policy" {
+  statement {
+    actions = ["sts:AssumeRole"]
+    
+    principals {
+      type        = "Service"
+      identifiers = ["ecs-tasks.amazonaws.com"]
+    }
+
 
 
