@@ -51,10 +51,6 @@ resource "aws_ecs_task_definition" "make_hemia_task" {
   execution_role_arn       = "${aws_iam_role.ecsTaskExecutionRole.arn}"
 }
 
-resource "aws_iam_role" "ecsTaskExecutionRole" {
-  name               = "ecsTaskExecutionRole"
-  assume_role_policy = "${data.aws_iam_policy_document.assume_role_policy.json}"
-}
 
 
 
