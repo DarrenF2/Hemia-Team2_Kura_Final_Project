@@ -5,13 +5,13 @@
     "cpu": 1024,
     "memory": 2048,
     "essential": true,
+    "task_role_arn": "ecsTaskExecutionRole",
+    "execution_role_arn": "ecsTaskExecutionRole",
     "portMappings": [
       {
         "containerPort": 8081,
         "hostPort": 8081
       }
     ]
-    "task_role_arn": "ecsTaskExecutionRole",
-    "execution_role_arn": "ecsTaskExecutionRole"
   }
 ]
