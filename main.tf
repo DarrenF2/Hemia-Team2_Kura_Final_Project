@@ -52,8 +52,8 @@ module "web_server_sg" {
 
 # Target Group
   
-resource "aws_lb_target_group" "hemia_target" {
-  name        = "hemia_target_group"
+resource "aws_lb_target_group" "hemia-target" {
+  name        = "hemia-target-group"
   port        = 8081
   protocol    = "HTTP"
   target_type = "ip"
