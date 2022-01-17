@@ -3,7 +3,7 @@
     "name": "hemia-image",
     "image": "175806093776.dkr.ecr.us-east-1.amazonaws.com/hemia_ecr_repo",
     "requires_compatibilities": ["FARGATE"],
-    "role_arn": "arn:aws:iam::175806093776:role/ecsTaskExecutionRole"
+    "role_arn": "arn:aws:iam::175806093776:role/ecsTaskExecutionRole",
     "network_mode": "awsvpc",
     "cpu": 1024,
     "memory": 2048,
