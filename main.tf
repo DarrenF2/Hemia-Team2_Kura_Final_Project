@@ -23,33 +23,20 @@ provider "aws" {
 #   name = "hemia-cluster"
 # }
 
+
 # AWS Task Definition
 
-resource "aws_ecs_task_definition" "make_hemia_task" {
-  container_definitions = <<DEFINITION
-  [
-    {
-      "name": "hemia-task"
-      "image": "${aws_ecr_repository.create_hemia_ecr_repo.repository_url}",
-      "essential": true,
-      "portMappings": [
-        {
-          "containerPort": 8081,
-          "hostPort": 8081
-        }
-       ],
-      "memory": 512,
-      "cpu": 256
-    }
-  ]
-  
-  DEFINITION
-  requires_compatibilities = ["FARGATE"]
-  network_mode             = "awsvpc"
-  memory                   = 2048
-  cpu                      = 1024
-  execution_role_arn       = "${aws_iam_role.ecsTaskExecutionRole.arn}"
+# Simply specify the family to find the latest ACTIVE revision in that family.
+data "aws_ecs_task_definition" "hemia_task" {
+  task_definition = aws_ecs_task_definition.hemia_task.family
 }
+
+
+resource "aws_ecs_task_definition" "hemia_task" {
+  family = "hemia_taskdef"
+  container_definitions = "${file("task-definitions/service.json")}"
+
+
 
 
 
