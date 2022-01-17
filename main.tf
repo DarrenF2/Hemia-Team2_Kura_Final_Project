@@ -14,6 +14,6 @@ provider "aws" {
 
 
 #Test EC2
-resource "aws_instance" "myweb" {
-  ami           = "ami-0e763a959ec839f5e"
+resource "aws_instance" "ubuntu" {
+  ami           = "ami-04505e74c0741db8d"
   instance_type = "t2.micro"
