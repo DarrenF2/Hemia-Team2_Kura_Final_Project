@@ -13,16 +13,14 @@ provider "aws" {
   region = "us-east-1"
 }
 
+# Creare ECR Repo
 resource "aws_ecr_repository" "create_hemia_ecr_repo" {
   name = "hemia_ecr_repo"
 }
   
+# Create ECS Cluster
+resource "aws_ecs-cluster" "create_hemia_cluster" {
+  name = "hemia-cluster"
+}
 
 
-# #Test EC2
-  
-# resource "aws_instance" "ubuntu" {
-#   ami           = "ami-013f17f36f8b1fefb"
-#   instance_type = "t2.micro"
-# #   subnet_id     = ""
-# }
