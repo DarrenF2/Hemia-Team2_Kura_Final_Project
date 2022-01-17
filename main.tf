@@ -14,6 +14,9 @@ provider "aws" {
 
 
 #Test EC2
+  
 resource "aws_instance" "ubuntu" {
-  ami           = "ami-04505e74c0741db8d"
+  ami           = "ami-013f17f36f8b1fefb"
   instance_type = "t2.micro"
+#   subnet_id     = ""
+}
