@@ -45,8 +45,8 @@ resource "aws_security_group_rule" "hemia_security" {
   from_port         = 80
   to_port           = 8081
   protocol          = "tcp"
-  cidr_blocks       = [aws_vpc.example.cidr_block]
-  ipv4_cidr_blocks  = [aws_vpc.example.ipv4_cidr_block]
+  
+  ipv4_cidr_blocks  = [aws_vpc.hemia_security.ipv4_cidr_block]
   security_group_id = "sg-123-hemia"
 }
 
