@@ -50,6 +50,15 @@ module "web_server_sg" {
 }
 
 
+# Target Group
+  
+resource "aws_lb_target_group" "hemia_target" {
+  name        = "hemia_target_group"
+  port        = 8081
+  protocol    = "HTTP"
+  target_type = "ip"
+  vpc_id      = "vpc-5f562d22"
+}
 
 
 
