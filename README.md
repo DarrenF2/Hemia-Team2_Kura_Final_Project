@@ -3,20 +3,21 @@
 ## Welcome to the Hemia Application Repository!
 
 ## Table of Contents
-* [What is Hemia?](#What-is-Hemia?)
-* [How does the Hemia Application work?](#how-does-the-hemia-application-work?) 
-* [Technologies used to create Hemia](#technolgies-used-to-create-hemia)
-* [Operate the Hemia Application](#operate-the-hemia-application)
-* [Monitoring and Generating Alerts](#monitoring-and-generating-alerts)
+* [What Is Hemia?](#What-Is-Hemia?)
+* [How Does The Hemia Application Work?](#How-Does-The-Hemia-Application-Work?) 
+* [Technologies Used To Create Hemia](#Technolgies-Used-To-Create-Hemia)
+* [Operate The Hemia Application](#Operate-The-Hemia-Application)
+* [Monitoring And Generating Alerts](#Monitoring-And-Generating-Alerts)
 
 ## What is Hemia?
+**Hemia is an application primarily to be used by doctors**. Everyday, doctors have patients and collect patient information 
 
-
-## How does the Hemia Application Work?
+## How does the Hemia Application work?
 
 
 ## Technologies used to create Hemia
-
+The following technologies were used to create Hemia:
+*
 
 ## Operate the Hemia Application
 
