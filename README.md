@@ -13,7 +13,7 @@ The Hemia application can be used by doctors and lab technicians. When accessing
 
 ## Technologies used to create Hemia
 The following technologies were used to create Hemia: <br>
-* php - Backend scripting language to create Hemia
+* PHP - Backend scripting language to create Hemia
 * HTML - Frontend scripting language to create Hemia
 * Docker - Create an image of the application locally
 * AWS
@@ -27,6 +27,12 @@ The following technologies were used to create Hemia: <br>
 <br>
 
 ## Operate the Hemia Application
+To use Hemia, follow the steps shown below:
+1. Access the Hemia url
+2. Make either a doctor or lab technician account
+* As a doctor:
+ * See your current patient list
+ * Upload files
 
 <br>
 
