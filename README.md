@@ -33,6 +33,10 @@ To use Hemia, follow the steps shown below:
 * As a doctor:
   * See your current patient list
   * Upload files
+  * Check back when your files are sent back
+* As a lab techinician:
+  * See available files sent to you from doctors
+  * Review the files and send the results back to the doctors
 
 <br>
 
