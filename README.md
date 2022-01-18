@@ -23,7 +23,7 @@ The following technologies were used to create Hemia: <br>
   * CodePipeline - CI/CD services that checks for recent updates and errors to help publish the application securely onto the web
   * Elastic Beanstalk - Publish the application onto the web
 * Terraform - Provision AWS resources quickly
-* CircleCI = Reads Terraform latest commands or changes in real-time to deploy or update AWS infrastructure  
+* CircleCI - Reads Terraform latest commands or changes in real-time to deploy or update AWS infrastructure  
 <br>
 
 ## Operate the Hemia Application
