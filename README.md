@@ -3,7 +3,7 @@
 ## Welcome to the Hemia Application Repository!
 
 ## Table of Contents
-* [What Is Hemia?](#What Is Hemia?)
+* [What Is Hemia?](#whatishemia?)
 * [How Does The Hemia Application Work?](#How-Does-The-Hemia-Application-Work?) 
 * [Technologies Used To Create Hemia](#Technolgies-Used-To-Create-Hemia)
 * [Operate The Hemia Application](#Operate-The-Hemia-Application)
