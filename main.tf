@@ -27,38 +27,38 @@ provider "aws" {
 # AWS Task Definition
 
 # Simply specify the family to find the latest ACTIVE revision in that family.
-data "aws_ecs_task_definition" "hemia_task" {
-  task_definition = aws_ecs_task_definition.hemia_task.family
-}
+# data "aws_ecs_task_definition" "hemia_task" {
+#   task_definition = aws_ecs_task_definition.hemia_task.family
+# }
 
 
-resource "aws_ecs_task_definition" "hemia_task" {
-  family                = "hemia_task"
-  container_definitions = "${file("task-definitions/service.json")}"
-}
+# resource "aws_ecs_task_definition" "hemia_task" {
+#   family                = "hemia_task"
+#   container_definitions = "${file("task-definitions/service.json")}"
+# }
 
 
-# AWS Security Group
-module "web_server_sg" {
-  source = "terraform-aws-modules/security-group/aws//modules/http-80"
+# # AWS Security Group
+# module "web_server_sg" {
+#   source = "terraform-aws-modules/security-group/aws//modules/http-80"
 
-  name        = "hemia-web-server"
-  description = "Security group for web-server with HTTP ports open within VPC"
-  vpc_id      = "vpc-5f562d22"
+#   name        = "hemia-web-server"
+#   description = "Security group for web-server with HTTP ports open within VPC"
+#   vpc_id      = "vpc-5f562d22"
 
-  ingress_cidr_blocks = ["10.10.0.0/16"]
-}
+#   ingress_cidr_blocks = ["10.10.0.0/16"]
+# }
 
 
-# Target Group
+# # Target Group
   
-resource "aws_lb_target_group" "hemia-target" {
-  name        = "hemia-target-group"
-  port        = 8081
-  protocol    = "HTTP"
-  target_type = "ip"
-  vpc_id      = "vpc-5f562d22"
-}
+# resource "aws_lb_target_group" "hemia-target" {
+#   name        = "hemia-target-group"
+#   port        = 8081
+#   protocol    = "HTTP"
+#   target_type = "ip"
+#   vpc_id      = "vpc-5f562d22"
+# }
 
 
 
