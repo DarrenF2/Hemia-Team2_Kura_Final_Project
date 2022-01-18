@@ -1,0 +1,46 @@
+version: "3.8"
+services:
+  php:
+    build: 
+      context: .
+    image: xaviertech/hemia:1.0
+    networks:
+      - frontend
+      - backend
+    environment:
+      - MYSQL_HOST=mysql-app
+      - MYSQL_USER=adminroot
+      - MYSQL_PASSWORD=welcome123
+      - MYSQL_DB=docRegform2
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - "5000:80"
+    container_name: php-app
+  mysql:
+    image: mysql:latest
+    networks:
+      - backend
+    environment:
+      - MYSQL_ROOT_PASSWORD=welcome123
+      - MYSQL_USER=adminroot
+      - MYSQL_PASSWORD=welcome123
+      - MYSQL_DATABASE=docRegform2
+    container_name: mysql-app
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    depends_on:
+      - mysql
+    networks:
+      - backend
+    ports:
+      - "5001:80"
+    environment:
+      - PMA_HOST=mysql-app
+      - PMA_PORT= 3306
+    volumes:
+      - /sessions
+    container_name: phpmyadmin-app
+networks:
+  frontend:
+  backend:
