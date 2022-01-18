@@ -38,6 +38,24 @@ To use Hemia, follow the steps shown below:
   * See available files sent to you from doctors
   * Review the files and send the results back to the doctors
 
+<html>
+     <h1>
+        <img style="float: center;" src=/pictures/image.png width="1000" />
+     </h1>
+</html>
+
+<html>
+     <h1>
+        <img style="float: center;" src=/pictures/image2.png width="1000" />
+     </h1>
+</html>
+
+<html>
+     <h1>
+        <img style="float: center;" src=/pictures/image3.png width="1000" />
+     </h1>
+</html>
+
 <br>
 
 ## Monitoring and Generating Alerts
