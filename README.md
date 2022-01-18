@@ -10,7 +10,7 @@
 * [Monitoring And Generating Alerts](#Monitoring-And-Generating-Alerts)
 
 ## What is Hemia?
-**Hemia is an application primarily to be used by doctors**. Everyday, doctors have patients and collect patient information 
+**Hemia is an application primarily to help doctors**. A doctors' responsibility is to take care of patients and collect any information that is needed to be analyzed to identify and resolve any potential problems a patient can have. However, it may be problematic for a doctor to take care of patients and also analyze patient data in a limited amount of time. **The Hemia application is where doctors can make an account to upload their patient information for lab technicians to analyze the data and send it back to the doctors to help their work.**    
 
 ## How does the Hemia Application work?
 
@@ -20,8 +20,9 @@ The following technologies were used to create Hemia: <br>
 * php
 * Docker
 * AWS
-  *
-*
+*  ECS
+* CircleCI
+* Terraform
 
 ## Operate the Hemia Application
 
