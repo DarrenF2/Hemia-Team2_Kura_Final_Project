@@ -31,8 +31,8 @@ To use Hemia, follow the steps shown below:
 1. Access the Hemia url
 2. Make either a doctor or lab technician account
 * As a doctor:
- * See your current patient list
- * Upload files
+  * See your current patient list
+  * Upload files
 
 <br>
 
