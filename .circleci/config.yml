@@ -7,7 +7,7 @@ workflows:
   Create_Infrastructure:
     jobs:
     - terraform/validate:
-        checkout: true
+        # checkout: true
         context: keys
     - terraform/plan:
         checkout: true
