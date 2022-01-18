@@ -16,7 +16,11 @@
 
 
 ## Technologies used to create Hemia
-The following technologies were used to create Hemia:
+The following technologies were used to create Hemia: <br>
+* php
+* Docker
+* AWS
+  *
 *
 
 ## Operate the Hemia Application
