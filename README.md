@@ -11,6 +11,18 @@
 The Hemia application can be used by doctors and lab technicians. When accessing the application, first an account must be created. The two options to choose from is to make a doctors account or a lab technicians account. When making either a doctor or lab technician account, both asks for your credentials and work identification to approve of your identity and job status.  
 <br>
 
+## Operate the Hemia Application
+To use Hemia, follow the steps shown below:
+1. Access the Hemia url
+2. Make either a doctor or lab technician account
+* As a doctor:
+  * See your current patient list
+  * Check back when your files are sent back
+* As a lab techinician:
+  * See lab patient history
+  * Add Patient lab results and send the results back to the doctors
+<br>
+
 ## Technologies used to create Hemia
 The following technologies were used to create Hemia: <br>
 * PHP - Backend scripting language to create Hemia
@@ -24,20 +36,6 @@ The following technologies were used to create Hemia: <br>
   * Elastic Beanstalk - Publish the application onto the web
 * Terraform - Provision AWS resources quickly
 * CircleCI - Reads Terraform latest commands or changes in real-time to deploy or update AWS infrastructure  
-<br>
-
-## Operate the Hemia Application
-To use Hemia, follow the steps shown below:
-1. Access the Hemia url
-2. Make either a doctor or lab technician account
-* As a doctor:
-  * See your current patient list
-  * Upload files
-  * Check back when your files are sent back
-* As a lab techinician:
-  * See available files sent to you from doctors
-  * Review the files and send the results back to the doctors
-
 <br>
 
 ## Monitoring and Generating Alerts
