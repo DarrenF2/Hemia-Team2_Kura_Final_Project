@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "hemia-tfstate"
+    bucket = "hemia-app-tfstate"
     key    = "terraform/hemia/terraform.tfstate"
     region = "us-east-1"
   }

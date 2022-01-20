@@ -1,6 +1,6 @@
 # Create a public s3 bucket for storing the application files
 resource "aws_s3_bucket" "hemia1_bucket" {
-    bucket = "hemia-test-02"
+    bucket = "hemia-test-04"
     acl    = "public-read"
     policy = file("policy.json")
 versioning {
@@ -17,7 +17,8 @@ resource "aws_s3_bucket_object" "eb_bucket_obj" {
 
 # Create S3 bucket to hold terraform state
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "hemia-tfstate"
+  bucket = "hemia-app-tfstate"
+  #policy = file("policy.json")
   # Enable versioning so we can see the full revision history of our
   # state files
   force_destroy = true
