@@ -1,0 +1,29 @@
+---
+# https://circleci.com/developer/orbs/orb/circleci/terraform
+version: 2.1
+orbs:
+  terraform: circleci/terraform@3.0.0
+workflows:
+  Create_Infrastructure:
+    jobs:
+    - terraform/validate:
+        # checkout: true
+        # context: keys
+    - terraform/plan:
+        checkout: true
+        context: keys
+        persist-workspace: true
+        requires:
+        - terraform/validate
+    - terraform/apply:
+        attach-workspace: true
+        context: keys
+        filters:
+          branches:
+            only: main
+        requires:
+        - terraform/plan
+
+            
+
+
