@@ -7,13 +7,13 @@ jobs:
     steps:
       - checkout
       - terraform/init:
-          path: .
+          path: ./terraform
       - terraform/validate:
-          path: .
+          path: ./terraform
       - terraform/plan:
-          path: .
+          path: ./terraform
       - terraform/apply:
-          path: .
+          path: ./terraform
     working_directory: ~/src
 workflows:
   single-job-lifecycle:
