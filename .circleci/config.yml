@@ -1,29 +1,21 @@
----
-# https://circleci.com/developer/orbs/orb/circleci/terraform
 version: 2.1
 orbs:
   terraform: circleci/terraform@3.0.0
+jobs:
+  single-job-lifecycle:
+    executor: terraform/default
+    steps:
+      - checkout
+      - terraform/init:
+          path: .
+      - terraform/validate:
+          path: .
+      - terraform/plan:
+          path: .
+      - terraform/apply:
+          path: .
+    working_directory: ~/src
 workflows:
-  Create_Infrastructure:
+  single-job-lifecycle:
     jobs:
-    - terraform/validate:
-        # checkout: true
-        # context: keys
-    - terraform/plan:
-        checkout: true
-        context: keys
-        persist-workspace: true
-        requires:
-        - terraform/validate
-    - terraform/apply:
-        attach-workspace: true
-        context: keys
-        filters:
-          branches:
-            only: main
-        requires:
-        - terraform/plan
-
-            
-
-
+      - single-job-lifecycle
